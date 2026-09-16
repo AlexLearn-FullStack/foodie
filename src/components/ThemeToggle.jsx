@@ -33,7 +33,7 @@ export default function ThemeToggle() {
       onClick={
         () => setTheme(dark ? "light" : "dark")
       }
-      className=""
+      className="icon"
     >
       {
         dark 
