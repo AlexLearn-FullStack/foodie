@@ -18,13 +18,53 @@
   }
 }
 
+@font-face {
+  font-family: "Ketchup Manis";
+  src: url('/fonts/Ketchup-Manis.woff2') format('woff2'),
+      url('/fonts/ketchup-manis-opentype.otf') format('opentype');
+}
+
 @layer utilities {
   .btn {
-    @apply bg-accent hover:bg-accent-hover active:bg-accent cursor-pointer;
+    @apply bg-accent hover:bg-accent-hover active:bg-accent cursor-pointer transition-all duration-500;
   }
 
   .icon {
-    @apply rounded-full cursor-pointer;
+    @apply rounded-full cursor-pointer transition-all duration-300;
+  }
+
+  .badge-icon {
+    @apply size-4;
+  }
+}
+
+@layer components {
+  header {
+    @apply p-3 px-9 border-b flex justify-between items-center gap-2;
+
+    .logo {
+      @apply flex gap-2 items-center;
+
+      h1 {
+        @apply text-3xl font-ketchup text-foreground/80;
+
+        span {
+          @apply font-serif font-bold text-accent;
+        }
+      }
+    }
+
+    nav {
+      @apply flex gap-3 items-center;
+
+      span {
+        @apply cursor-pointer flex gap-1.5 items-center text-sm;
+      }
+
+      .avatar {
+        @apply cursor-pointer border! border-border! bg-background! rounded-sm!;
+      }
+    }
   }
 }
 
@@ -32,6 +72,7 @@
 @theme inline {
   --font-heading: var(--font-sans);
   --font-sans: 'Geist Variable', sans-serif;
+  --font-ketchup: 'Ketchup Manis', serif;
   --color-destructive: var(--destructive);
   --color-accent: oklch(0.6683 0.1759 39.11);
   --color-accent-hover: oklch(0.6239 0.1703 39.16);
@@ -69,7 +110,7 @@
 
 .dark {
   --background: oklch(0.2046 0 0);
-  --foreground: oklch(0.985 0 0);
+  --foreground: oklch(0.955 0.0124 91.52);
   --card: oklch(0.205 0 0);
   --primary: oklch(0.922 0 0);
   --secondary: oklch(29% .022 60);
