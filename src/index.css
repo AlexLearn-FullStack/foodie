@@ -40,7 +40,7 @@
 
 @layer components {
   header {
-    @apply p-3 px-9 border-b flex justify-between items-center gap-2 max-[460px]:px-3;
+    @apply sticky top-0 left-0 right-0 z-10 bg-background/80 backdrop-blur-md p-3 px-9 border-b flex justify-between items-center gap-2 max-[460px]:px-3;
 
     .logo {
       @apply flex gap-2 items-center;

@@ -14,19 +14,31 @@ import {
 const Nav = ({ className, spanClassName }) => {
   return (
     <nav className={cn(className)}>
-      <span className={cn(spanClassName)}>
+      <span
+        className={cn(spanClassName)}
+        aria-label="View map"
+      >
         <Map className="badge-icon" />
         Map
       </span>
-      <span className={cn(spanClassName)}>
+      <span
+        className={cn(spanClassName)}
+        aria-label="Restaurant rankings"
+      >
         <Podium className="badge-icon" />
         Rank
       </span>
-      <span className={cn(spanClassName)}>
+      <span
+        className={cn(spanClassName)}
+        aria-label="Places you've been to"
+      >
         <Sparkles className="badge-icon" />
         Recap
       </span>
-      <span className={cn(spanClassName)}>
+      <span
+        className={cn(spanClassName)}
+        aria-label="Share favorite places"
+      >
         <Share2 className="badge-icon" />
         Share
       </span>
@@ -55,6 +67,8 @@ export default function Navbar () {
           onClick={
             () => goHome()
           }
+          role="button"
+          tabIndex={-1}
         >
           <Button className="btn">
             <ForkKnifeCrossed />
@@ -69,12 +83,22 @@ export default function Navbar () {
             !enableDock && <Nav />
           }
 
-          <Button className="btn max-[640px]:rounded-sm">
+          <Button
+            className="btn max-[640px]:rounded-sm"
+            aria-label="Add a new place"
+          >
             <Plus className="text-muted" />
             <span className="max-[640px]:hidden">Add a place</span>
           </Button>
+
           <ThemeToggle />
-          <Button className="avatar">AK</Button>
+
+          <Button
+            className="avatar"
+            aria-label="View user"
+          >
+            AK
+          </Button>
         </div>
       </header>
 
@@ -82,7 +106,7 @@ export default function Navbar () {
         enableDock
           && 
             <Nav
-              className="absolute bottom-0 left-0 right-0 flex justify-around items-center p-3 px-6 border-t"
+              className="fixed bottom-0 left-0 right-0 bg-background flex justify-around items-center p-3 px-6 border-t"
               spanClassName="cursor-pointer flex flex-col items-center"
             />
       }
