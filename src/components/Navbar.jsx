@@ -17,6 +17,8 @@ const Nav = ({ className, spanClassName }) => {
       <span
         className={cn(spanClassName)}
         aria-label="View map"
+        role="button"
+        tabIndex={0}
       >
         <Map className="badge-icon" />
         Map
@@ -24,6 +26,8 @@ const Nav = ({ className, spanClassName }) => {
       <span
         className={cn(spanClassName)}
         aria-label="Restaurant rankings"
+        role="button"
+        tabIndex={0}
       >
         <Podium className="badge-icon" />
         Rank
@@ -31,6 +35,8 @@ const Nav = ({ className, spanClassName }) => {
       <span
         className={cn(spanClassName)}
         aria-label="Places you've been to"
+        role="button"
+        tabIndex={0}
       >
         <Sparkles className="badge-icon" />
         Recap
@@ -38,6 +44,8 @@ const Nav = ({ className, spanClassName }) => {
       <span
         className={cn(spanClassName)}
         aria-label="Share favorite places"
+        role="button"
+        tabIndex={0}
       >
         <Share2 className="badge-icon" />
         Share
@@ -68,7 +76,13 @@ export default function Navbar () {
             () => goHome()
           }
           role="button"
-          tabIndex={-1}
+          tabIndex={0}
+          onKeyDown={(event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              goHome();
+            }
+          }}
         >
           <Button className="btn">
             <ForkKnifeCrossed />
