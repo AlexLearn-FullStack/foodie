@@ -40,13 +40,13 @@
 
 @layer components {
   header {
-    @apply p-3 px-9 border-b flex justify-between items-center gap-2;
+    @apply sticky top-0 left-0 right-0 z-10 bg-background/80 backdrop-blur-md p-3 px-9 border-b flex justify-between items-center gap-2 max-[460px]:px-3;
 
     .logo {
       @apply flex gap-2 items-center;
 
       h1 {
-        @apply text-3xl font-ketchup text-foreground/80;
+        @apply text-3xl font-ketchup text-foreground/80 max-[460px]:text-xl;
 
         span {
           @apply font-serif font-bold text-accent;
@@ -54,11 +54,16 @@
       }
     }
 
-    nav {
-      @apply flex gap-3 items-center;
+    .nav-elements {
+      @apply flex gap-3 items-center max-[460px]:gap-2;
 
-      span {
-        @apply cursor-pointer flex gap-1.5 items-center text-sm;
+      nav {
+        @apply flex gap-3 items-center;
+
+        span {
+          @apply cursor-pointer flex gap-1.5 items-center justify-center text-sm;
+        }
+
       }
 
       .avatar {
