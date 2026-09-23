@@ -36,6 +36,10 @@
   .badge-icon {
     @apply size-4;
   }
+
+  .indicators {
+    @apply size-4 text-muted-foreground cursor-pointer;
+  }
 }
 
 @layer components {
@@ -68,6 +72,63 @@
 
       .avatar {
         @apply cursor-pointer border! border-border! bg-background! rounded-sm!;
+      }
+    }
+  }
+
+  #home {
+    @apply p-3 pt-0 px-9 max-[460px]:px-3 lg:grid lg:grid-cols-[380px_1fr];
+
+    #sidebar {
+      @apply lg:border-r pt-3 space-y-3;
+
+      #search {
+        @apply py-3 flex gap-3 border-b mr-3 mb-3;
+
+        .searchbox {
+          @apply flex flex-1 min-w-0 border gap-1 items-center p-1 rounded-lg;
+
+          button {
+            @apply flex cursor-pointer;
+          }
+
+          input {
+            @apply flex-1 min-w-0 focus:ring-0 focus:outline-0 text-sm text-foreground/80;
+          }
+
+          &:focus-within {
+            @apply ring-2 ring-accent/60;
+          }
+        }
+
+        .filter-location {
+          @apply relative border rounded-md;
+
+          .city-toggle {
+            @apply h-full flex items-center gap-1.5 px-2 text-sm cursor-pointer;
+          }
+
+          .city-menu {
+            @apply absolute right-0 top-full z-20 mt-1 min-w-36 border border-border bg-background p-1 shadow-lg rounded-sm;
+
+            .city-option {
+              @apply w-full px-3 py-2 text-left text-sm cursor-pointer transition-colors hover:bg-secondary;
+            }
+          }
+        }
+
+      }
+
+      .site-promise {
+        @apply space-y-2;
+
+        h2 {
+          @apply text-2xl font-bold font-serif dark:text-foreground/80;
+        }
+
+        p {
+          @apply text-muted-foreground;
+        }
       }
     }
   }
