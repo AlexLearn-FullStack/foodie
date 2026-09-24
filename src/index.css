@@ -64,7 +64,7 @@
       nav {
         @apply flex gap-3 items-center;
 
-        span {
+        a {
           @apply cursor-pointer flex gap-1.5 items-center justify-center text-sm;
         }
 

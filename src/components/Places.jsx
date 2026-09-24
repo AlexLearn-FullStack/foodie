@@ -2,14 +2,14 @@ import { Badge } from "@ui/badge";
 import { MapPin } from "lucide-react";
 
 
-const Places = ({ places, ranked }) => (
+const Places = ({ location, places, ranked }) => (
   <article className="flex gap-2 items-center">
     <Badge
       variant="secondary"
       className="p-3"
     >
       <MapPin />
-      <span>Location</span>
+      <span>{ location }</span>
     </Badge>
 
     <p className="text-sm space-x-2 text-muted-foreground">

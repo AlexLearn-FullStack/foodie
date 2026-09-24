@@ -8,7 +8,11 @@ export default function Home () {
   return (
     <main id="home">
       <section id="sidebar">
-        <Places places={10} ranked={4} />
+        <Places
+          location={'Nairobi'}
+          places={10}
+          ranked={4}
+        />
         
         <SearchAndFilter />
         
