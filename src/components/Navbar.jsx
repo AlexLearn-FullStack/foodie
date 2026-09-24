@@ -1,8 +1,8 @@
-import { useNavigate } from "react-router-dom";
+import { cn } from "cn";
+import { useMediaQuery } from "react-responsive";
+import { Link, useNavigate } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 import { Button } from "@ui/button";
-import { useMediaQuery } from "react-responsive";
-import { cn } from "cn";
 import {
   ForkKnifeCrossed,
   Map, Podium,
@@ -11,45 +11,41 @@ import {
 } from "lucide-react";
 
 
-const Nav = ({ className, spanClassName }) => {
+const Nav = ({ className, linkClassName }) => {
   return (
     <nav className={cn(className)}>
-      <span
-        className={cn(spanClassName)}
+      <Link
+        to="/"
+        className={cn(linkClassName)}
         aria-label="View map"
-        role="button"
-        tabIndex={0}
       >
         <Map className="badge-icon" />
         Map
-      </span>
-      <span
-        className={cn(spanClassName)}
+      </Link>
+      <Link
+        to="/rank"
+        className={cn(linkClassName)}
         aria-label="Restaurant rankings"
-        role="button"
-        tabIndex={0}
       >
         <Podium className="badge-icon" />
         Rank
-      </span>
-      <span
-        className={cn(spanClassName)}
+      </Link>
+      <Link
+        to="/recap"
+        className={cn(linkClassName)}
         aria-label="Places you've been to"
-        role="button"
-        tabIndex={0}
       >
         <Sparkles className="badge-icon" />
         Recap
-      </span>
-      <span
-        className={cn(spanClassName)}
+      </Link>
+      <Link
+        to="/share"
+        className={cn(linkClassName)}
         aria-label="Share favorite places"
-        role="button"
-        tabIndex={0}
       >
         <Share2 className="badge-icon" />
         Share
-      </span>
+      </Link>
     </nav>
   );
 }
@@ -121,7 +117,7 @@ export default function Navbar () {
           && 
             <Nav
               className="fixed bottom-0 left-0 right-0 bg-background flex justify-around items-center p-3 px-6 border-t"
-              spanClassName="cursor-pointer flex flex-col items-center"
+              linkClassName="cursor-pointer flex flex-col items-center"
             />
       }
     </>
